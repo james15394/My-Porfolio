@@ -1,0 +1,26 @@
+* {
+  font-family: "Poppins", sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+.App {
+  height: 100%;
+}
+.App__container {
+  height: 100%;
+  display: grid;
+  place-items: center;
+}
+.fp-section {
+  display: grid;
+  place-items: center;
+}
+.fp-tableCell {
+  display: grid !important;
+  place-items: center;
+}
+#works .fp-tableCell {
+  display: flex !important;
+  align-items: center;
+}
