@@ -52,6 +52,7 @@
   },
   "devDependencies": {
     "@types/animejs": "^3.1.2",
-    "@types/react-scroll": "^1.8.2"
+    "@types/react-scroll": "^1.8.2",
+    "@types/styled-components": "^5.1.9"
   }
 }
