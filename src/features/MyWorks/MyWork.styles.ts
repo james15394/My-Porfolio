@@ -4,8 +4,7 @@ export const MyWorkContainer = styled.div`
   height: 100vh;
   position: relative;
   z-index: 1;
-  background-color: #f3eee8;
-  background-image: linear-gradient(315deg, #f3eee8 0%, #e8dbfc 74%);
+  background-color: #07203f;
   display: flex;
   align-items: center;
   overflow: hidden;
@@ -17,7 +16,7 @@ export const MyWorkContainer = styled.div`
       left: 0;
       height: 100%;
       width: 50%;
-      background: #e516b7;
+      background: #d73234;
     }
     @media (min-width: 999px) {
       ::after {
@@ -43,7 +42,7 @@ export const MyWorkContainer = styled.div`
     @media (max-width: 1120px) {
       display: none;
     }
-    background: #e516b7;
+    background: #d73234;
     height: 80%;
     display: flex;
     flex-direction: column;
@@ -58,7 +57,11 @@ export const MyWorkContainer = styled.div`
       position: absolute;
       left: 50%;
       top: 0;
-      background: linear-gradient(to right, #000, transparent);
+      background: linear-gradient(
+        to right,
+        rgba(255, 255, 255, 0.7),
+        transparent
+      );
       width: 300%;
       height: 100%;
       opacity: 0.2;
@@ -103,7 +106,9 @@ export const MyWorkContainer = styled.div`
         }
       }
     }
-
+    @media (max-width: 430px) {
+      padding: 0;
+    }
     .myWork__item {
       position: relative;
       width: 250px;
@@ -121,6 +126,11 @@ export const MyWorkContainer = styled.div`
       @media (max-width: 1120px) {
         width: 220px;
         height: 280px;
+      }
+      @media (max-width: 430px) {
+        width: 150px;
+        height: 200px;
+        margin: 10px;
       }
       overflow: hidden;
       transition: 0.5s;
@@ -166,6 +176,9 @@ export const MyWorkContainer = styled.div`
           opacity: 0;
           transition: 0.5s;
           z-index: 1;
+          @media (max-width: 430px) {
+            height: 65%;
+          }
         }
 
         img {

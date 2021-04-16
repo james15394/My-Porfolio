@@ -16,10 +16,9 @@ const App = () => (
       navigation
       navigationTooltips={anchors}
       onLeave={(origin, destination, direction) => {
-        console.log("onLeave event", { origin, destination, direction });
+        // console.log("onLeave event", { origin, destination, direction });
       }}
       render={({ state, fullpageApi }) => {
-        console.log("render prop change", state, fullpageApi);
         return (
           <div className="App__container">
             <Home />

@@ -28,7 +28,7 @@ const Service = () => {
           exit="hidden"
           variants={{
             visible: { x: 0 },
-            hidden: { x: "-100vh" },
+            hidden: { x: "-50vh" },
           }}
           className="service__container"
         >
@@ -37,10 +37,10 @@ const Service = () => {
               <img src={Design} alt="" />
             </div>
             <div className="service__content">
-              I think web design is like a "magic wand". If a service or product
-              is magic to solve a problem, it is the role of design to act as an
-              intermediary for users to master it. We strive every day to create
-              a "magic wand" that matches the user.
+              Learning to code is the very arduous journey, especially for the
+              novice, self-taught person who have never touched this field. So,
+              PERSISTENCE and PATIENCE is very crucial for me to start the hard
+              journey.
             </div>
           </div>
 
@@ -49,11 +49,9 @@ const Service = () => {
               <img src={Story} alt="" />
             </div>
             <div className="service__content">
-              I love story-like content such as novels, movies, and manga.
-              Stories can get people's attention and make things easier to
-              understand and remember. I believe that if you can study every
-              story pattern and give your output a story, you will get a big
-              return.
+              Now, I feel at a point that I can build some Websites, using some
+              technology to create, design them. But I still spend time learning
+              and practising all skills learnt via Internet and friends.
             </div>
           </div>
           <div className="service__item">
@@ -61,10 +59,9 @@ const Service = () => {
               <img src={Tech} alt="" />
             </div>
             <div className="service__content">
-              "Well-developed science and technology is indistinguishable from
-              magic." I want to be a person who can always catch up with the
-              latest technology and respond to changes. It's never too late to
-              find love in a certain field.
+              I want to be a person who can always catch up with the latest
+              technology and respond to changes. My goal is to be better than I
+              was yesterday.I compete with no one but myself to be improved.
             </div>
           </div>
         </motion.div>

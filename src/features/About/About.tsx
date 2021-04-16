@@ -29,6 +29,7 @@ const About = () => {
             hidden: { x: -300, scale: 0 },
           }}
           className="item left"
+          data-text="Who I Am"
         >
           WHO I AM
         </motion.div>
@@ -77,7 +78,9 @@ const About = () => {
             <Divider />
             <p>
               From 2020, I have been interested in Website development and
-              self-learned Frontend path ever since
+              self-learned Frontend path ever since.{" "}
+              <span>"It's never too late to find love in a certain field"</span>
+              .
             </p>
           </div>
         </motion.div>

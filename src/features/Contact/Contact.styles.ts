@@ -18,6 +18,7 @@ export const ContactContainer = styled.div`
     img {
       width: 100%;
       height: 100%;
+      filter: invert(1);
       @media (max-width: 1170px) {
         width: 80%;
         height: 80%;
@@ -31,7 +32,8 @@ export const ContactContainer = styled.div`
     position: absolute;
     top: 0;
     left: 0;
-    background: #fb4cab;
+    // background: #fb4cab;
+    background: #07203f;
     width: 100%;
     height: 100vh;
     display: grid;
@@ -41,7 +43,8 @@ export const ContactContainer = styled.div`
       position: absolute;
       width: 40px;
       height: 40px;
-      background: #fb4cab;
+      // background: #fb4cab;
+      background: #d73234;
       transform: rotate(45deg);
       box-shadow: 20px 20px 40px rgba(0, 0, 0, 0.2);
       ::before {
@@ -72,6 +75,10 @@ export const ContactContainer = styled.div`
     position: relative;
     width: 350px;
     height: 400px;
+    @media (max-width: 500px) {
+      width: 150px;
+      height: 200px;
+    }
     border-radius: 10px;
     background: #fff;
     transform-style: preserve-3d;
@@ -146,13 +153,21 @@ export const ContactContainer = styled.div`
         flex-direction: column;
         align-items: center;
         justify-content: center;
-
+        @media (max-width: 500px) {    
+          width: 150px;
+          height: 200px;
+          overflow: hidden;
+          padding: 0;
+        }};
         h2 {
           margin-bottom: 20px;
           font-size: 2em;
           letter-spacing: 2px;
           color: #072142;
           position: relative;
+          @media (max-width: 500px) {    
+          display: none
+        }
           ::before {
             position: absolute;
             content: "";
@@ -167,6 +182,18 @@ export const ContactContainer = styled.div`
           flex-direction: column;
           align-items: flex-start;
           width: 100%;
+         .MuiButton-label {
+           @media (max-width: 500px) {    
+          font-size: 10px;
+        }
+        .MuiButton-startIcon {
+          margin-right: 2px;
+        }
+        .MuiSvgIcon-root {
+          width: 0.8em;
+          height: 0.8em
+        }
+         }
           a {
             color: #000;
           }

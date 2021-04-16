@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const ServiceContainer = styled.div`
-  background: #f19f44;
+  background: #132a48;
   display: grid;
   place-items: center;
   min-height: 100vh;
@@ -11,6 +11,7 @@ export const ServiceContainer = styled.div`
   .service {
     position: relative;
     height: 100%;
+    width: 100%;
     display: grid;
     place-items: center;
     ::before {
@@ -20,8 +21,12 @@ export const ServiceContainer = styled.div`
       left: 0;
       width: 100%;
       height: 100%;
-      background: linear-gradient(#e63946, #457b9d);
+      background: linear-gradient(#ff2c24, #457b9d);
       clip-path: circle(20% at 100% 70%);
+      @media (max-width: 430px) {
+        bottom: 0;
+        right: 0;
+      }
     }
     ::after {
       position: absolute;
@@ -32,6 +37,8 @@ export const ServiceContainer = styled.div`
       height: 100%;
       background: linear-gradient(#457b9d, #f1faee);
       clip-path: circle(20% at 14% 16%);
+      @media (max-width: 430px) {
+      }
     }
   }
   .service__container {
@@ -42,8 +49,11 @@ export const ServiceContainer = styled.div`
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
     gap: 30px 20px;
-
+    @media (max-width: 430px) {
+      gap: 10px;
+    }
     .service__item {
+      position: relative;
       display: flex;
       flex-direction: column;
       align-items: center;
@@ -55,8 +65,15 @@ export const ServiceContainer = styled.div`
       border-radius: 15px;
       overflow: hidden;
       transition: 0.2s;
+      z-index: 111;
+      @media (max-width: 430px) {
+        height: 200px;
+        width: 100%;
+        flex-direction: row;
+        place-self: center;
+      }
       :hover {
-        background: rgba(255, 255, 255, 0.3);
+        background: rgba(255, 255, 255, 0.2);
       }
       box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
       backdrop-filter: blur(10px);
@@ -85,11 +102,18 @@ export const ServiceContainer = styled.div`
           width: 100px;
           height: 100px;
         }
+        @media (max-width: 430px) {
+          display: none;
+        }
       }
       .service__content {
-        color: #000;
+        color: #fff;
         letter-spacing: 1.5px;
         line-height: 2;
+        @media (max-width: 430px) {
+          font-size: 12px;
+          font-weight: 500;
+        }
       }
     }
   }
