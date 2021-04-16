@@ -8,9 +8,11 @@ export const HomeContainer = styled.div<Ref>`
   place-items: center;
   height: 100vh;
   width: 100%;
-  background: #fec3bd;
-  overflow: hidden;
+  background: #0f0c29;
+  background: -webkit-linear-gradient(to right, #24243e, #302b63, #0f0c29);
+  background: linear-gradient(to right, #24243e, #302b63, #0f0c29);
 
+  overflow: hidden;
   .intro {
     position: absolute;
     width: 100%;
@@ -24,6 +26,7 @@ export const HomeContainer = styled.div<Ref>`
     .intro__wrap {
       width: 80%;
       height: 100%;
+      padding: 50px;
       display: flex;
       justify-content: space-between;
       align-items: center;
@@ -33,8 +36,57 @@ export const HomeContainer = styled.div<Ref>`
       }
       .name {
         letter-spacing: 2px;
-        color: #d73234;
+        color: #fff;
         flex: 0.7;
+        .scroll {
+          margin-top: 20px;
+          writing-mode: vertical-rl;
+          text-orientation: mixed;
+          letter-spacing: 4px;
+          text-transform: uppercase;
+          font-size: 12px;
+          position: relative;
+          ::after {
+            position: absolute;
+            content: "";
+            height: 100px;
+            overflow: hidden;
+            width: 2px;
+            border-radius: 30px;
+            bottom: -110px;
+            left: 3px;
+            background: #fff;
+          }
+        }
+        .line {
+          width: 150px;
+          height: 30px;
+          position: relative;
+          z-index: 122;
+          margin: 30px 0;
+          ::before {
+            position: absolute;
+            content: "";
+            top: 0;
+            left: 0;
+            width: 70%;
+            height: 5px;
+            border-radius: 30px;
+            background: #d73234;
+            z-index: 1;
+          }
+          ::after {
+            position: absolute;
+            content: "";
+            bottom: 0;
+            right: 0;
+            width: 70%;
+            height: 5px;
+            border-radius: 30px;
+            background: #d73234;
+            z-index: 1;
+          }
+        }
         @media (max-width: 790px) {
           display: flex;
           flex-direction: column;
@@ -52,8 +104,15 @@ export const HomeContainer = styled.div<Ref>`
           @media (max-width: 790px) {
             font-size: 100px;
           }
+          @media (max-width: 430px) {
+            font-size: 60px;
+          }
           font-weight: 800;
           text-transform: uppercase;
+          @supports (-webkit-text-stroke: 1px black) {
+            -webkit-text-stroke: 3px #fff;
+            -webkit-text-fill-color: transparent;
+          }
         }
         .job {
           font-size: 30px;
@@ -79,7 +138,7 @@ export const HomeContainer = styled.div<Ref>`
           display: none;
         }
         h2 {
-          font-size: 50px;
+          font-size: 80px;
           @media (max-width: 1250px) {
             font-size: 40px;
           }
@@ -92,7 +151,7 @@ export const HomeContainer = styled.div<Ref>`
             left: 120px;
           }
 
-          color: #fff;
+          color: #d73234;
           letter-spacing: 2px;
           font-weight: 1000;
           position: absolute;
@@ -123,9 +182,9 @@ export const HomeContainer = styled.div<Ref>`
           top: -150px;
         }
 
-        background: #d73234;
+        background: #fff;
         top: -300px;
-
+        box-shadow: 20px 20px 20px rgba(0, 0, 0, 0.1);
         left: 100px;
         border-radius: 50%;
         transition: 0.5s;
@@ -151,19 +210,21 @@ export const HomeContainer = styled.div<Ref>`
           width: 450px;
           height: 450px;
           top: -250px;
-          box-shadow: 0 0 0 50px rgba(215, 50, 52, 0.2),
-            0 0 0 100px rgba(215, 50, 52, 0.2),
-            0 0 0 150px rgba(215, 50, 52, 0.1);
+          box-shadow: 0 0 0 50px rgba(255, 255, 255, 0.2),
+            0 0 0 100px rgba(255, 255, 255, 0.2),
+            0 0 0 150px rgba(255, 255, 255, 0.1);
         }
-        background: #d73234;
+        background: rgba(255, 255, 255, 0.8);
         opacity: 0.5;
         top: -350px;
         left: 50px;
         border-radius: 50%;
         transition: 0.5s;
-        box-shadow: 0 0 0 50px rgba(215, 50, 52, 0.2),
-          0 0 0 100px rgba(215, 50, 52, 0.2), 0 0 0 150px rgba(215, 50, 52, 0.2),
-          0 0 0 200px rgba(215, 50, 52, 0.2), 0 0 0 250px rgba(215, 50, 52, 0.1);
+        box-shadow: 0 0 0 50px rgba(255, 255, 255, 0.1),
+          0 0 0 100px rgba(255, 255, 255, 0.1),
+          0 0 0 150px rgba(255, 255, 255, 0.1),
+          0 0 0 200px rgba(255, 255, 255, 0.1),
+          0 0 0 250px rgba(255, 255, 255, 0.05);
       }
     }
   }

@@ -1,6 +1,12 @@
 import React, { useEffect, useRef, useState } from "react";
 import { HomeContainer } from "./Home.styles";
-import { motion, useMotionValue, useTransform } from "framer-motion";
+import {
+  motion,
+  useAnimation,
+  useMotionValue,
+  useTransform,
+} from "framer-motion";
+import { useInView } from "react-intersection-observer";
 
 const introVariants = {
   hidden: { x: "-100vh" },
@@ -10,8 +16,23 @@ const portfolioVariants = {
   hidden: { x: "100vh" },
   visible: { x: 0 },
 };
+const scrollVariants = {
+  hidden: { y: "300px" },
+  visible: { y: 0 },
+};
 
 const Home = () => {
+  const controls = useAnimation();
+  const [ref, inView] = useInView({ initialInView: true });
+
+  useEffect(() => {
+    if (inView) {
+      controls.start("visible");
+    } else {
+      controls.start("hidden");
+    }
+  }, [controls, inView]);
+  console.log(inView);
   const [scrollValue, setScrollValue] = useState(0);
   useEffect(() => {
     window.addEventListener("scroll", handleScroll);
@@ -54,9 +75,11 @@ const Home = () => {
         <div className="intro__wrap">
           <div className="name">
             <motion.div
+              ref={ref}
+              animate="visible"
               variants={introVariants}
               initial="hidden"
-              animate="visible"
+              exit="hidden"
               transition={{ duration: 0.5 }}
               className="infoName"
             >
@@ -67,17 +90,41 @@ const Home = () => {
             <motion.div
               variants={introVariants}
               initial="hidden"
+              exit="hidden"
+              ref={ref}
+              animate="visible"
+              transition={{ duration: 0.5 }}
+              className="line"
+            ></motion.div>
+            <motion.div
+              variants={introVariants}
+              initial="hidden"
+              exit="hidden"
+              ref={ref}
               animate="visible"
               transition={{ duration: 0.5 }}
               className="job"
             >
               Frontend developer
             </motion.div>
+            <motion.div
+              variants={scrollVariants}
+              initial="hidden"
+              exit="hidden"
+              ref={ref}
+              animate={controls}
+              transition={{ duration: 0.5 }}
+              className="scroll"
+            >
+              Scroll down
+            </motion.div>
           </div>
           <div className="jobDes">
             <motion.h2
               variants={portfolioVariants}
               initial="hidden"
+              exit="hidden"
+              ref={ref}
               animate="visible"
               transition={{ duration: 0.5 }}
               style={{
@@ -90,6 +137,8 @@ const Home = () => {
             <motion.div
               variants={portfolioVariants}
               initial="hidden"
+              exit="hidden"
+              ref={ref}
               animate="visible"
               transition={{ duration: 0.5 }}
               className="circle"
