@@ -1,2 +1,2 @@
 # My portfolio website
-Link: https://my-portfolio-f713b.web.app/#Home
+Link: https://fervent-visvesvaraya-abfd54.netlify.app
