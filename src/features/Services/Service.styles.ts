@@ -60,8 +60,8 @@ export const ServiceContainer = styled.div`
       background: rgba(255, 255, 255, 0.1);
       border-top: 1px solid rgba(255, 255, 255, 0.5);
       border-left: 1px solid rgba(255, 255, 255, 0.5);
-      height: 100%;
-      width: 100%;
+      max-height: 500px;
+      max-width: 400px;
       border-radius: 15px;
       overflow: hidden;
       transition: 0.2s;
@@ -99,10 +99,10 @@ export const ServiceContainer = styled.div`
         padding: 20px;
         border-radius: 50%;
         img {
-          width: 100px;
-          height: 100px;
+          width: 4em;
+          height: 4em;
         }
-        @media (max-width: 430px) {
+        @media (max-width: 800px) {
           display: none;
         }
       }
@@ -110,10 +110,8 @@ export const ServiceContainer = styled.div`
         color: #fff;
         letter-spacing: 1.5px;
         line-height: 2;
-        @media (max-width: 430px) {
-          font-size: 12px;
-          font-weight: 500;
-        }
+        font-size: clamp(0.8rem, 1vw + 0.2rem, 2rem);
+       
       }
     }
   }
