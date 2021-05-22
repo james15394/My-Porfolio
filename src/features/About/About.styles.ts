@@ -40,14 +40,14 @@ export const AboutContainer = styled.div`
       padding: 50px 20px;
       margin-left: 50px;
       max-height: 700px;
-      min-width: 400px;
+      min-width: 300px;
       max-width: 700px;
       position: relative;
       box-shadow: -30px 30px 30px rgba(0, 0, 0, 0.3);
       flex: 1;
       position: relative;
       overflow: hidden;
-      @media (max-width: 430px) {
+      @media (max-width: 800px) {
         padding: 20px;
         width: 100%;
         margin-left: 0;
@@ -74,9 +74,7 @@ export const AboutContainer = styled.div`
       .description {
         line-height: 30px;
         font-size: clamp(0.6rem, 1vw + 0.5rem, 1.2rem);
-        @media (max-width: 430px) {
-          font-size: 1em;
-        }
+        
         span {
           font-weight: 900;
         }
