@@ -14,8 +14,8 @@ const SkillSet = () => {
             </div>
             <div className="skill__content">
               <svg>
-                <circle cx="50" cy="50" r="50"></circle>
-                <circle cx="50" cy="50" r="50"></circle>
+                <circle cx="50" cy="50" r="30"></circle>
+                <circle cx="50" cy="50" r="30"></circle>
               </svg>
               <div className="skill__number">
                 <h3>
