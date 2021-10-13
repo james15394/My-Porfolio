@@ -8,20 +8,8 @@ import anime from "animejs";
 import GitHubIcon from "@material-ui/icons/GitHub";
 import LinkedInIcon from "@material-ui/icons/LinkedIn";
 import MailOutlineIcon from "@material-ui/icons/MailOutline";
-import { useInView } from "react-intersection-observer";
-import { useAnimation } from "framer-motion";
 
 const Contact = () => {
-  const controls = useAnimation();
-  const [inView] = useInView();
-
-  useEffect(() => {
-    if (inView) {
-      controls.start("visible");
-    } else {
-      controls.start("hidden");
-    }
-  }, [controls, inView]);
   let arr: any[] = [];
   Array(100)
     .fill(1)
