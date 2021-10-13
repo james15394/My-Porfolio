@@ -54,20 +54,6 @@ const Contact = () => {
   }, []);
   return (
     <ContactContainer className="section" id="contact">
-      <motion.div
-        ref={ref}
-        animate={controls}
-        initial="hidden"
-        transition={{ duration: 0.3 }}
-        exit="hidden"
-        variants={{
-          visible: { x: 0, scale: 1.1, rotate: 70 },
-          hidden: { x: 300, scale: 0 },
-        }}
-        className=" img"
-      >
-<!--         <img src={Arrow} alt="" /> -->
-      </motion.div>
       <div className="container">
         {arr.map((i) => (
           <div className="el"></div>
