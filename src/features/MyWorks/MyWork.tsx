@@ -4,7 +4,6 @@ import { Button, Link } from "@material-ui/core";
 import Gym from "../../assets/images/works/gymlove.jpeg";
 import Instagram from "../../assets/images/works/instagram.jpeg";
 import Shoppee from "../../assets/images/works/shoppee.jpeg";
-import Website from "../../assets/images/works/website.jpeg";
 
 const data = [
   {
