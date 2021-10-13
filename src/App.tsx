@@ -25,7 +25,7 @@ const App = () => (
             <About />
             <Service />
             <MyWork />
-            <SkillSet />
+<!--             <SkillSet /> -->
             <Contact />
           </div>
         );
