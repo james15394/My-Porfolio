@@ -70,17 +70,17 @@ const About = () => {
               pharmacy
             </p>
             <p>
-              <span>Experience: </span> QA deputy Head of Pharmaceutical Company
+              <span>Experience: </span> Japanese market IT company
             </p>
             <p>
               <span>Other: </span> IELTS tutor
             </p>
             <Divider />
             <p>
-              From 2020, I have been interested in Website development and
-              self-learned Frontend path ever since.{" "}
-              <span>"It's never too late to find love in a certain field"</span>
-              .
+              I am eager to learn and research new things.
+              <span style={{ display: "block" }}>
+                "It's never too late to find love in a certain field"
+              </span>
             </p>
           </div>
         </motion.div>
