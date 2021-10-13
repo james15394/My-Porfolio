@@ -66,7 +66,7 @@ const Contact = () => {
         }}
         className=" img"
       >
-        <img src={Arrow} alt="" />
+<!--         <img src={Arrow} alt="" /> -->
       </motion.div>
       <div className="container">
         {arr.map((i) => (
