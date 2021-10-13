@@ -8,13 +8,12 @@ import anime from "animejs";
 import GitHubIcon from "@material-ui/icons/GitHub";
 import LinkedInIcon from "@material-ui/icons/LinkedIn";
 import MailOutlineIcon from "@material-ui/icons/MailOutline";
-import Arrow from "../../assets/images/arrow-small.svg";
 import { useInView } from "react-intersection-observer";
-import { motion, useAnimation } from "framer-motion";
+import { useAnimation } from "framer-motion";
 
 const Contact = () => {
   const controls = useAnimation();
-  const [ref, inView] = useInView();
+  const [inView] = useInView();
 
   useEffect(() => {
     if (inView) {
@@ -27,7 +26,7 @@ const Contact = () => {
   Array(100)
     .fill(1)
     .map((_, i) => {
-      arr.push(i);
+      return arr.push(i);
     });
   function animation() {
     anime({
@@ -51,6 +50,7 @@ const Contact = () => {
   }
   useEffect(() => {
     animation();
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
   return (
     <ContactContainer className="section" id="contact">
