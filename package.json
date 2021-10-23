@@ -17,6 +17,7 @@
     "axios": "^0.21.1",
     "framer-motion": "^4.0.0",
     "react": "^17.0.1",
+    "react-copy-to-clipboard": "^5.0.4",
     "react-dom": "^17.0.1",
     "react-intersection-observer": "^8.31.0",
     "react-parallax-tilt": "^1.4.95",
@@ -54,6 +55,7 @@
   },
   "devDependencies": {
     "@types/animejs": "^3.1.2",
+    "@types/react-copy-to-clipboard": "^5.0.2",
     "@types/react-scroll": "^1.8.2",
     "@types/react-sound": "^1.2.3",
     "@types/styled-components": "^5.1.9"

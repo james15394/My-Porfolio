@@ -32,7 +32,6 @@ const Home = () => {
       controls.start("hidden");
     }
   }, [controls, inView]);
-  console.log(inView);
   const [scrollValue, setScrollValue] = useState(0);
   useEffect(() => {
     window.addEventListener("scroll", handleScroll);

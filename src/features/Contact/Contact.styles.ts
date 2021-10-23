@@ -153,77 +153,88 @@ export const ContactContainer = styled.div`
         flex-direction: column;
         align-items: center;
         justify-content: center;
-        @media (max-width: 500px) {    
+        @media (max-width: 500px) {
           width: 150px;
           height: 200px;
           overflow: hidden;
           padding: 0;
-        }};
-        h2 {
-          margin-bottom: 20px;
-          font-size: 2em;
-          letter-spacing: 2px;
-          color: #072142;
-          position: relative;
-          @media (max-width: 500px) {    
-          display: none
         }
-          ::before {
-            position: absolute;
-            content: "";
-            width: 100px;
-            height: 8px;
-            background: grey;
-            bottom: -15px;
+      }
+      h2 {
+        margin-bottom: 20px;
+        font-size: 2em;
+        letter-spacing: 2px;
+        color: #072142;
+        position: relative;
+        @media (max-width: 500px) {
+          display: none;
+        }
+        ::before {
+          position: absolute;
+          content: "";
+          width: 100px;
+          height: 8px;
+          background: grey;
+          bottom: -15px;
+        }
+      }
+      .contact__info {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        width: 100%;
+        position: relative;
+        .copied {
+          position: absolute;
+          background: #fd2155;
+          border-radius: 4px;
+          padding: 10px 15px;
+          bottom: -50px;
+          right: -40px;
+          font-size: 12px;
+          color: #fff;
+        }
+        .MuiButton-label {
+          @media (max-width: 500px) {
+            font-size: 10px;
+          }
+          .MuiButton-startIcon {
+            margin-right: 2px;
+          }
+          .MuiSvgIcon-root {
+            width: 0.8em;
+            height: 0.8em;
           }
         }
-        .contact__info {
-          display: flex;
-          flex-direction: column;
-          align-items: flex-start;
-          width: 100%;
-         .MuiButton-label {
-           @media (max-width: 500px) {    
-          font-size: 10px;
+        a {
+          color: #000;
         }
-        .MuiButton-startIcon {
-          margin-right: 2px;
-        }
-        .MuiSvgIcon-root {
-          width: 0.8em;
-          height: 0.8em
-        }
-         }
-          a {
-            color: #000;
-          }
-          button {
-            text-transform: capitalize;
+        button {
+          text-transform: capitalize;
 
-            :nth-child(1) {
+          :nth-child(1) {
+            pointer-events: none;
+            .MuiButton-startIcon {
+              color: #0845ef;
+            }
+          }
+          :nth-child(2) {
+            .MuiButton-startIcon {
+              color: #000;
+            }
+          }
+          :nth-child(3) {
+            .MuiButton-startIcon {
+              color: #0845ef;
+            }
+          }
+          :nth-child(4) {
+            .MuiButton-startIcon {
+              color: #f14336;
               pointer-events: none;
-              .MuiButton-startIcon {
-                color: #0845ef;
-              }
             }
-            :nth-child(2) {
-              .MuiButton-startIcon {
-                color: #000;
-              }
-            }
-            :nth-child(3) {
-              .MuiButton-startIcon {
-                color: #0845ef;
-              }
-            }
-            :nth-child(4) {
-              .MuiButton-startIcon {
-                color: #f14336;
-                pointer-events: none;
-              }
-              .MuiButton-label {
-                text-transform: lowercase;
-              }
+            .MuiButton-label {
+              text-transform: lowercase;
             }
           }
         }

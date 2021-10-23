@@ -1,5 +1,5 @@
 import { Button, Link } from "@material-ui/core";
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { ContactContainer } from "./Contact.styles";
 import HomeIcon from "@material-ui/icons/Home";
 import Contact1 from "../../assets/images/contact.jpg";
@@ -8,6 +8,8 @@ import anime from "animejs";
 import GitHubIcon from "@material-ui/icons/GitHub";
 import LinkedInIcon from "@material-ui/icons/LinkedIn";
 import MailOutlineIcon from "@material-ui/icons/MailOutline";
+import { motion } from "framer-motion";
+import { CopyToClipboard } from "react-copy-to-clipboard";
 
 const Contact = () => {
   let arr: any[] = [];
@@ -36,10 +38,30 @@ const Contact = () => {
       complete: animation,
     });
   }
+  const variants = {
+    initial: { opacity: 0, x: 0 },
+    animate: {
+      opacity: 1,
+      x: "-50%",
+      transition: {
+        type: "spring",
+        bounce: 0.25,
+      },
+    },
+  };
+  const [copied, setCopied] = useState(false);
   useEffect(() => {
     animation();
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
+  useEffect(() => {
+    if (copied) {
+      setTimeout(() => {
+        setCopied(false);
+      }, 3000);
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [copied]);
   return (
     <ContactContainer className="section" id="contact">
       <div className="container">
@@ -77,9 +99,22 @@ const Contact = () => {
                   Linkedin
                 </Link>
               </Button>
-              <Button startIcon={<MailOutlineIcon />}>
-                quocduongpharma@gmail.com
-              </Button>
+              <CopyToClipboard
+                text="quocduongpharma@gmail.com"
+                onCopy={() => setCopied(true)}
+              >
+                <Button startIcon={<MailOutlineIcon />} variant="outlined">
+                  quocduongpharma@gmail.com
+                </Button>
+              </CopyToClipboard>
+              <motion.div
+                className="copied"
+                variants={variants}
+                initial="initial"
+                animate={copied ? "animate" : "initial"}
+              >
+                Copied
+              </motion.div>
             </div>
           </div>
         </div>
