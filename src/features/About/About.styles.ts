@@ -13,7 +13,7 @@ export const AboutContainer = styled.div`
   .wrapper {
     width: 80%;
     display: flex;
-    height: 100%;
+    max-height: 700px;
     padding: 80px 30px;
     align-items: center;
     justify-content: space-between;
@@ -25,27 +25,29 @@ export const AboutContainer = styled.div`
       justify-content: center;
     }
     .left {
-      font-size: 4em;
+      font-size: clamp(2rem, 2vw + 1.5rem, 5rem);
       letter-spacing: 2px;
       font-weight: 1000;
       position: relative;
       color: #fff;
-      margin-right: 100px;
-      @media (max-width: 430px) {
-        font-size: 3em;
-        max-height: 20%;
+      margin-right: 50px;
+      @media (max-width: 800px) {
+        display: none;
       }
     }
     .right {
       background: rgba(215, 50, 52);
       padding: 50px 20px;
       margin-left: 50px;
+      max-height: 700px;
+      min-width: 300px;
+      max-width: 700px;
       position: relative;
       box-shadow: -30px 30px 30px rgba(0, 0, 0, 0.3);
       flex: 1;
       position: relative;
       overflow: hidden;
-      @media (max-width: 430px) {
+      @media (max-width: 800px) {
         padding: 20px;
         width: 100%;
         margin-left: 0;
@@ -64,17 +66,15 @@ export const AboutContainer = styled.div`
       h3 {
         letter-spacing: 2px;
         margin-bottom: 20px;
-        font-size: 30px;
+        font-size: clamp(0.8rem, 2vw + 1rem, 2rem);
         @media (max-width: 430px) {
-          font-size: 25px;
+          font-size: 2em;
         }
       }
       .description {
         line-height: 30px;
-        font-size: 20px;
-        @media (max-width: 430px) {
-          font-size: 15px;
-        }
+        font-size: clamp(0.6rem, 1vw + 0.5rem, 1.2rem);
+
         span {
           font-weight: 900;
         }

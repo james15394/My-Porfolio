@@ -36,9 +36,7 @@ const App = () => {
         anchors={anchors}
         navigation
         navigationTooltips={anchors}
-        onLeave={(origin, destination, direction) => {
-          // console.log("onLeave event", { origin, destination, direction });
-        }}
+        onLeave={(origin, destination, direction) => {}}
         render={({ state, fullpageApi }) => {
           return (
             <div className="App__container">
@@ -46,7 +44,6 @@ const App = () => {
               <About />
               <Service />
               <MyWork />
-              {/* <SkillSet /> */}
               <Contact />
             </div>
           );

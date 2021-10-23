@@ -4,7 +4,6 @@ import { Button, Link } from "@material-ui/core";
 import Gym from "../../assets/images/works/gymlove.jpeg";
 import Instagram from "../../assets/images/works/instagram.jpeg";
 import Shoppee from "../../assets/images/works/shoppee.jpeg";
-import Website from "../../assets/images/works/website.jpeg";
 
 const data = [
   {
@@ -26,10 +25,10 @@ const data = [
     href: "https://relaxed-fermi-0b14fb.netlify.app/",
   },
   {
-    img: Website,
-    name: "website",
-    des: "Vanilla Javascript",
-    href: "https://responsive-website-94022.firebaseapp.com/",
+    img: "https://assets.nflxext.com/ffe/siteui/vlv3/71cfa010-f8dd-4298-a94d-1ae5034a857c/bb3f65e5-fca2-41b0-80b7-d28f1d429edd/VN-en-20210425-popsignuptwoweeks-perspective_alpha_website_medium.jpg",
+    name: "Netflix",
+    des: "Typescript, Framer motion, redux, firebase",
+    href: "https://clever-kepler-d43843.netlify.app",
   },
 ];
 
