@@ -113,6 +113,13 @@ export const MyWorkContainer = styled.div`
       position: relative;
       width: 250px;
       height: 300px;
+      ::before {
+        content: "";
+        background: rgba(0, 0, 0, 0.2);
+        inset: 0;
+        z-index: 100;
+        position: absolute;
+      }
       @media (max-width: 999px) {
         margin: 20px;
         width: 300px;
@@ -140,6 +147,9 @@ export const MyWorkContainer = styled.div`
         transform: rotate(0deg) scale(1.25);
         z-index: 1;
         box-shadow: 0 25px 40px rgba(0, 0, 0, 0.5);
+        ::before {
+          background: none;
+        }
         @media (min-width: 999px) {
           ~ .myWork__item {
             transform: rotateY(-25deg);
@@ -147,6 +157,7 @@ export const MyWorkContainer = styled.div`
         }
 
         .myWork__img {
+          transform: scale(1.2);
           ::before {
             opacity: 1;
           }

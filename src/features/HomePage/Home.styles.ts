@@ -11,7 +11,7 @@ export const HomeContainer = styled.div<Ref>`
   background: #0f0c29;
   background: -webkit-linear-gradient(to right, #24243e, #302b63, #0f0c29);
   background: linear-gradient(to right, #24243e, #302b63, #0f0c29);
-
+  /* background: #1d1d1d; */
   overflow: hidden;
   .intro {
     position: absolute;
@@ -36,7 +36,7 @@ export const HomeContainer = styled.div<Ref>`
       }
       .name {
         letter-spacing: 2px;
-        color: #fff;
+        color: #08fdd8;
         flex: 0.7;
         .scroll {
           margin-top: 20px;
@@ -110,7 +110,7 @@ export const HomeContainer = styled.div<Ref>`
           font-weight: 800;
           text-transform: uppercase;
           @supports (-webkit-text-stroke: 1px black) {
-            -webkit-text-stroke: 3px #fff;
+            -webkit-text-stroke: 3px #08fdd8;
             -webkit-text-fill-color: transparent;
           }
         }
