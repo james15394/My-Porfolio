@@ -37,3 +37,7 @@
   object-fit: contain;
   margin-right: 5px;
 }
+.loading {
+  position: absolute;
+  bottom: 30px;
+}
