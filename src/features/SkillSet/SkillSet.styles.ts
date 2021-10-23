@@ -37,7 +37,7 @@ export const SkillSetKit = styled.div`
       background: #fff;
       border-radius: 10px;
       margin: 50px;
-   @media (max-width: 650px) {
+      @media (max-width: 650px) {
         width: 180px;
         height: 120px;
         margin: 40px;
@@ -226,6 +226,9 @@ export const SkillSetKit = styled.div`
             @media (max-width: 430px) {
               display: none;
             }
+            @media (max-width: 430px) {
+              display: none;
+            }
           }
         }
         .skill__number {
@@ -236,7 +239,7 @@ export const SkillSetKit = styled.div`
           left: 0;
           width: 100%;
           height: 100%;
-                    h3 {
+          h3 {
             font-size: 1rem;
           }
           @media (max-width: 430px) {

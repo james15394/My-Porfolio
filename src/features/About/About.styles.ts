@@ -32,7 +32,7 @@ export const AboutContainer = styled.div`
       color: #fff;
       margin-right: 50px;
       @media (max-width: 800px) {
-          display: none;
+        display: none;
       }
     }
     .right {
@@ -74,7 +74,7 @@ export const AboutContainer = styled.div`
       .description {
         line-height: 30px;
         font-size: clamp(0.6rem, 1vw + 0.5rem, 1.2rem);
-        
+
         span {
           font-weight: 900;
         }

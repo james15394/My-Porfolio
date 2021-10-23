@@ -38,7 +38,7 @@ const Contact = () => {
   }
   useEffect(() => {
     animation();
-  // eslint-disable-next-line react-hooks/exhaustive-deps
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
   return (
     <ContactContainer className="section" id="contact">
@@ -78,7 +78,7 @@ const Contact = () => {
                 </Link>
               </Button>
               <Button startIcon={<MailOutlineIcon />}>
-                d1230310024@gmail.com
+                quocduongpharma@gmail.com
               </Button>
             </div>
           </div>

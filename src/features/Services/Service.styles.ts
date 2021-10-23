@@ -105,13 +105,15 @@ export const ServiceContainer = styled.div`
         @media (max-width: 800px) {
           display: none;
         }
+        @media (max-width: 430px) {
+          display: none;
+        }
       }
       .service__content {
         color: #fff;
         letter-spacing: 1.5px;
         line-height: 2;
         font-size: clamp(0.8rem, 1vw + 0.2rem, 2rem);
-       
       }
     }
   }
