@@ -48,6 +48,7 @@ const App = () => {
     } else {
       Howler.stop();
     }
+    // eslint-disable-next-line
   }, [playing]);
   return (
     <div className="App">
