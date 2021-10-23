@@ -10,6 +10,8 @@ import LinkedInIcon from "@material-ui/icons/LinkedIn";
 import MailOutlineIcon from "@material-ui/icons/MailOutline";
 import { motion } from "framer-motion";
 import { CopyToClipboard } from "react-copy-to-clipboard";
+import Copy from "../../images/copy.png";
+import Copied from "../../images/checked.png";
 
 const Contact = () => {
   let arr: any[] = [];
@@ -99,14 +101,17 @@ const Contact = () => {
                   Linkedin
                 </Link>
               </Button>
-              <CopyToClipboard
-                text="quocduongpharma@gmail.com"
-                onCopy={() => setCopied(true)}
-              >
-                <Button startIcon={<MailOutlineIcon />} variant="outlined">
+              <div className="copy">
+                <Button startIcon={<MailOutlineIcon />} disableRipple>
                   quocduongpharma@gmail.com
                 </Button>
-              </CopyToClipboard>
+                <CopyToClipboard
+                  text="quocduongpharma@gmail.com"
+                  onCopy={() => setCopied(true)}
+                >
+                  <img src={copied ? Copied : Copy} alt="" />
+                </CopyToClipboard>
+              </div>
               <motion.div
                 className="copied"
                 variants={variants}

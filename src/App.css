@@ -1,5 +1,43 @@
 .App {
   height: 100%;
+  position: relative;
+}
+.navigation {
+  position: fixed;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  z-index: 100000;
+}
+.navItem {
+  display: flex;
+  align-items: baseline;
+}
+.navItem > h2 {
+  color: #fff;
+  font-size: 14px;
+  position: absolute;
+  left: -70px;
+  opacity: 0;
+  transform: translateY(-6px);
+}
+.nav {
+  width: 30px;
+  height: 3px;
+  background: #fff;
+  margin-bottom: 30px;
+  cursor: pointer;
+  border-radius: 3px;
+}
+
+.nav:hover ~ h2 {
+  opacity: 1;
+}
+.nav__current {
+  width: 50px;
 }
 .App__container {
   height: 100%;

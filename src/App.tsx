@@ -5,16 +5,24 @@ import Contact from "./features/Contact/Contact";
 import Home from "./features/HomePage/Home";
 import MyWork from "./features/MyWorks/MyWork";
 import Service from "./features/Services/Service";
-import ReactFullpage from "@fullpage/react-fullpage";
 import SoundImg from "./images/sound.svg";
 import Sound, { ReactSoundProps } from "react-sound";
 import { Loading } from "./features/Loading";
+import ReactPageScroller from "react-page-scroller";
+import { motion } from "framer-motion";
 
-const anchors = ["Home", "About", "Passion", "Works", "Skillset", "Contact"];
+const anchors = [
+  { id: 0, label: "Home" },
+  { id: 1, label: "About" },
+  { id: 2, label: "Passion" },
+  { id: 3, label: "Works" },
+  { id: 4, label: "Contact" },
+];
 const App = () => {
   const [playing, setPlaying] =
     useState<ReactSoundProps["playStatus"]>("STOPPED");
   const [loadingMusic, setLoadingMusic] = useState(false);
+  const [currentSlide, setCurrentSlide] = useState(0);
   function togglePlayStatus() {
     setPlaying((status) => (status === "STOPPED" ? "PLAYING" : "STOPPED"));
   }
@@ -28,6 +36,22 @@ const App = () => {
         return "STOP";
     }
   }
+  const handlePageChange = (number: number) => {
+    setCurrentSlide(number);
+  };
+  const handleBeforePageChange = (number: number) => {
+    console.log(number);
+  };
+  const variants = {
+    initial: { width: 30 },
+    animate: {
+      width: 50,
+      transition: {
+        type: "tween",
+        duration: 0.4,
+      },
+    },
+  };
   useEffect(() => {
     if (playing === "STOPPED" || playing === "PAUSED") {
       setLoadingMusic(false);
@@ -37,7 +61,7 @@ const App = () => {
   }, [playing]);
   return (
     <div className="App">
-      <div onClick={(click) => togglePlayStatus()} className="Sound">
+      <div onClick={() => togglePlayStatus()} className="Sound">
         <img src={SoundImg} alt="" />
         {statusLabel(playing)}
         {loadingMusic && (
@@ -46,23 +70,22 @@ const App = () => {
           </div>
         )}
       </div>
-      <ReactFullpage
-        anchors={anchors}
-        navigation
-        navigationTooltips={anchors}
-        onLeave={(origin, destination, direction) => {}}
-        render={({ state, fullpageApi }) => {
-          return (
-            <div className="App__container">
-              <Home />
-              <About />
-              <Service />
-              <MyWork />
-              <Contact />
-            </div>
-          );
-        }}
-      />
+
+      <div className="App__container">
+        <ReactPageScroller
+          pageOnChange={handlePageChange}
+          onBeforePageScroll={handleBeforePageChange}
+          customPageNumber={currentSlide}
+          animationTimerBuffer={100}
+        >
+          <Home />
+          <About />
+          <Service />
+          <MyWork />
+          <Contact />
+        </ReactPageScroller>
+      </div>
+
       <Sound
         url="/videos/kiki.mp3"
         playStatus={playing}
@@ -71,6 +94,23 @@ const App = () => {
         loop
         onLoading={() => setLoadingMusic(true)}
       />
+      <div className="navigation">
+        {anchors.map((item) => {
+          return (
+            <div className="navItem">
+              <motion.div
+                className="nav"
+                variants={variants}
+                initial="initial"
+                animate={currentSlide === item.id ? "animate" : "initial"}
+                key={item.id}
+                onClick={() => setCurrentSlide(item.id)}
+              ></motion.div>
+              <h2>{item.label}</h2>
+            </div>
+          );
+        })}
+      </div>
     </div>
   );
 };

@@ -2,6 +2,7 @@ import styled from "styled-components";
 
 export const MyWorkContainer = styled.div`
   height: 100vh;
+  width: 100%;
   position: relative;
   z-index: 1;
   background-color: #07203f;

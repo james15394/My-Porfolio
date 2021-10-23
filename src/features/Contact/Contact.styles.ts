@@ -184,6 +184,18 @@ export const ContactContainer = styled.div`
         align-items: flex-start;
         width: 100%;
         position: relative;
+        .copy {
+          padding: 10px;
+          border: 1px solid rgba(0, 0, 0, 0.1);
+          border-radius: 4px;
+          align-items: center;
+          display: flex;
+          img {
+            width: 20px;
+            height: 20px;
+            cursor: pointer;
+          }
+        }
         .copied {
           position: absolute;
           background: #fd2155;

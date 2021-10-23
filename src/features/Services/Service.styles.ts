@@ -5,6 +5,7 @@ export const ServiceContainer = styled.div`
   display: grid;
   place-items: center;
   min-height: 100vh;
+  width: 100%;
   position: relative;
   z-index: 100;
   overflow: hidden;
