@@ -8,26 +8,13 @@ import anime from "animejs";
 import GitHubIcon from "@material-ui/icons/GitHub";
 import LinkedInIcon from "@material-ui/icons/LinkedIn";
 import MailOutlineIcon from "@material-ui/icons/MailOutline";
-import Arrow from "../../assets/images/arrow-small.svg";
-import { useInView } from "react-intersection-observer";
-import { motion, useAnimation } from "framer-motion";
 
 const Contact = () => {
-  const controls = useAnimation();
-  const [ref, inView] = useInView();
-
-  useEffect(() => {
-    if (inView) {
-      controls.start("visible");
-    } else {
-      controls.start("hidden");
-    }
-  }, [controls, inView]);
   let arr: any[] = [];
   Array(100)
     .fill(1)
     .map((_, i) => {
-      arr.push(i);
+      return arr.push(i);
     });
   function animation() {
     anime({
@@ -51,23 +38,10 @@ const Contact = () => {
   }
   useEffect(() => {
     animation();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
   return (
     <ContactContainer className="section" id="contact">
-      <motion.div
-        ref={ref}
-        animate={controls}
-        initial="hidden"
-        transition={{ duration: 0.3 }}
-        exit="hidden"
-        variants={{
-          visible: { x: 0, scale: 1.1, rotate: 70 },
-          hidden: { x: 300, scale: 0 },
-        }}
-        className=" img"
-      >
-        {/* <img src={Arrow} alt="" /> */}
-      </motion.div>
       <div className="container">
         {arr.map((i) => (
           <div className="el"></div>

@@ -5,7 +5,6 @@ import Contact from "./features/Contact/Contact";
 import Home from "./features/HomePage/Home";
 import MyWork from "./features/MyWorks/MyWork";
 import Service from "./features/Services/Service";
-import SkillSet from "./features/SkillSet/SkillSet";
 import ReactFullpage from "@fullpage/react-fullpage";
 
 const anchors = ["Home", "About", "Passion", "Works", "Skillset", "Contact"];
@@ -25,7 +24,6 @@ const App = () => (
             <About />
             <Service />
             <MyWork />
-            {/* <SkillSet /> */}
             <Contact />
           </div>
         );

@@ -18,7 +18,6 @@ export const SkillSetKit = styled.div`
     align-items: center;
     justify-content: center;
     flex-wrap: wrap;
-    padding: 20px 50px;
     @media (max-width: 430px) {
       display: grid;
       grid-template-columns: 1fr;
@@ -29,8 +28,8 @@ export const SkillSetKit = styled.div`
     height: 100%;
 
     .skill__card {
-      width: 33%;
-      height: 150px;
+      width: 25%;
+      height: 120px;
       position: relative;
       z-index: 2;
       display: grid;
@@ -38,10 +37,10 @@ export const SkillSetKit = styled.div`
       background: #fff;
       border-radius: 10px;
       margin: 50px;
-      @media (max-width: 430px) {
+      @media (max-width: 650px) {
         width: 180px;
-        height: 80px;
-        margin: 10px;
+        height: 120px;
+        margin: 40px;
         place-self: center;
       }
       :nth-child(1) {
@@ -49,7 +48,7 @@ export const SkillSetKit = styled.div`
           svg {
             circle {
               :nth-child(2) {
-                stroke-dashoffset: calc(440px - (440px * 70) / 100);
+                stroke-dashoffset: 30;
               }
             }
           }
@@ -60,7 +59,7 @@ export const SkillSetKit = styled.div`
           svg {
             circle {
               :nth-child(2) {
-                stroke-dashoffset: calc(440px - (440px * 70) / 100);
+                stroke-dashoffset: 30;
               }
             }
           }
@@ -71,7 +70,7 @@ export const SkillSetKit = styled.div`
           svg {
             circle {
               :nth-child(2) {
-                stroke-dashoffset: calc(440px - (440px * 90) / 100);
+                stroke-dashoffset: 10;
               }
             }
           }
@@ -82,7 +81,7 @@ export const SkillSetKit = styled.div`
           svg {
             circle {
               :nth-child(2) {
-                stroke-dashoffset: calc(440px - (440px * 80) / 100);
+                stroke-dashoffset: 20;
               }
             }
           }
@@ -93,7 +92,7 @@ export const SkillSetKit = styled.div`
           svg {
             circle {
               :nth-child(2) {
-                stroke-dashoffset: calc(440px - (440px * 60) / 100);
+                stroke-dashoffset: 40;
               }
             }
           }
@@ -104,7 +103,7 @@ export const SkillSetKit = styled.div`
           svg {
             circle {
               :nth-child(2) {
-                stroke-dashoffset: calc(440px - (440px * 70) / 100);
+                stroke-dashoffset: 30;
               }
             }
           }
@@ -114,10 +113,17 @@ export const SkillSetKit = styled.div`
         .skill__img {
           width: 150px;
           height: 100px;
-          @media (max-width: 430px) {
-            width: 150px;
+          @media (max-width: 1000px) {
+            width: 100px;
             height: 80px;
             top: calc(50% - 40px);
+            left: -50px;
+          }
+          @media (max-width: 750px) {
+            width: 80px;
+            height: 80px;
+            top: calc(50% - 40px);
+            left: -40px;
           }
           left: -75px;
           top: calc(50% - 50px);
@@ -165,11 +171,11 @@ export const SkillSetKit = styled.div`
           transition: 0.5s;
         }
         img {
-          max-width: 80px;
+          max-width: 50px;
           margin-bottom: 10px;
           transition: 0.5s;
           @media (max-width: 430px) {
-            max-width: 50px;
+            max-width: 30px;
           }
         }
         h3 {
@@ -181,7 +187,7 @@ export const SkillSetKit = styled.div`
           color: #fff;
           text-transform: uppercase;
           transition: 0.5s;
-          font-size: 15px;
+          font-size: 10px;
           box-shadow: 5px 10px 30px rgba(0, 0, 0, 0.3);
           @media (max-width: 430px) {
             display: none;
@@ -189,8 +195,8 @@ export const SkillSetKit = styled.div`
         }
       }
       .skill__content {
-        width: 150px;
-        height: 150px;
+        width: 120px;
+        height: 120px;
         display: grid;
         place-items: center;
         position: relative;
@@ -210,12 +216,15 @@ export const SkillSetKit = styled.div`
             width: 100%;
             height: 100%;
             stroke: #f1faee;
-            stroke-width: 10;
+            stroke-width: 7;
             transform: translate(10px, 10px);
             stroke-linecap: round;
             :nth-child(2) {
               stroke: #457b9d;
-              stroke-dasharray: 400px;
+              stroke-dasharray: 185px;
+            }
+            @media (max-width: 430px) {
+              display: none;
             }
             @media (max-width: 430px) {
               display: none;
@@ -230,6 +239,9 @@ export const SkillSetKit = styled.div`
           left: 0;
           width: 100%;
           height: 100%;
+          h3 {
+            font-size: 1rem;
+          }
           @media (max-width: 430px) {
             position: relative;
             width: 100%;

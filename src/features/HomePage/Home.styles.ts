@@ -94,19 +94,8 @@ export const HomeContainer = styled.div<Ref>`
           align-items: flex-start;
         }
         .infoName {
-          font-size: 90px;
-          @media (max-width: 1250px) {
-            font-size: 80px;
-          }
-          @media (max-width: 1000px) {
-            font-size: 70px;
-          }
-          @media (max-width: 790px) {
-            font-size: 100px;
-          }
-          @media (max-width: 430px) {
-            font-size: 60px;
-          }
+          font-size: clamp(3rem, 2vw + 4rem, 5rem);
+
           font-weight: 800;
           text-transform: uppercase;
           @supports (-webkit-text-stroke: 1px black) {
