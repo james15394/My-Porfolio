@@ -6,7 +6,7 @@ import Home from "./features/HomePage/Home";
 import MyWork from "./features/MyWorks/MyWork";
 import Service from "./features/Services/Service";
 import SoundImg from "./images/sound.svg";
-import Sound, { ReactSoundProps } from "react-sound";
+import { Howl, Howler } from "howler";
 import { Loading } from "./features/Loading";
 import ReactPageScroller from "react-page-scroller";
 import { motion } from "framer-motion";
@@ -19,23 +19,8 @@ const anchors = [
   { id: 4, label: "Contact" },
 ];
 const App = () => {
-  const [playing, setPlaying] =
-    useState<ReactSoundProps["playStatus"]>("STOPPED");
-  const [loadingMusic, setLoadingMusic] = useState(false);
+  const [playing, setPlaying] = useState(false);
   const [currentSlide, setCurrentSlide] = useState(0);
-  function togglePlayStatus() {
-    setPlaying((status) => (status === "STOPPED" ? "PLAYING" : "STOPPED"));
-  }
-  function statusLabel(status: ReactSoundProps["playStatus"]): string {
-    switch (status) {
-      case "STOPPED":
-        return "Sound PLAY";
-      case "PLAYING":
-        return "Sound STOP";
-      default:
-        return "STOP";
-    }
-  }
   const handlePageChange = (number: number) => {
     setCurrentSlide(number);
   };
@@ -52,19 +37,24 @@ const App = () => {
       },
     },
   };
+  const sound = new Howl({
+    src: ["/videos/kiki.mp3"],
+    loop: true,
+    volume: 0.2,
+  });
   useEffect(() => {
-    if (playing === "STOPPED" || playing === "PAUSED") {
-      setLoadingMusic(false);
+    if (playing) {
+      sound.play();
     } else {
-      setLoadingMusic(true);
+      Howler.stop();
     }
   }, [playing]);
   return (
     <div className="App">
-      <div onClick={() => togglePlayStatus()} className="Sound">
+      <div onClick={() => setPlaying((prev) => !prev)} className="Sound">
         <img src={SoundImg} alt="" />
-        {statusLabel(playing)}
-        {loadingMusic && (
+        {playing ? "Sound STOP" : "Sound PLAY"}
+        {playing && (
           <div className="loading">
             <Loading />
           </div>
@@ -86,14 +76,6 @@ const App = () => {
         </ReactPageScroller>
       </div>
 
-      <Sound
-        url="/videos/kiki.mp3"
-        playStatus={playing}
-        playFromPosition={300}
-        volume={1.5}
-        loop
-        onLoading={() => setLoadingMusic(true)}
-      />
       <div className="navigation">
         {anchors.map((item) => {
           return (
