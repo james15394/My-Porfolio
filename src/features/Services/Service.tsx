@@ -1,8 +1,5 @@
 import React, { useEffect } from "react";
 import { ServiceContainer } from "./Service.styles";
-import Design from "../../assets/images/design.svg";
-import Story from "../../assets/images/story.svg";
-import Tech from "../../assets/images/technology.svg";
 import { useInView } from "react-intersection-observer";
 import { motion, useAnimation } from "framer-motion";
 
