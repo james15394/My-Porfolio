@@ -34,7 +34,8 @@ const Service = () => {
         >
           <div className="service__item">
             <div className="service__img">
-              <img src={Design} alt="" />
+              <div className="bar">PERSISTENCE</div>
+              <div className="small" />
             </div>
             <div className="service__content">
               Learning to code is the very arduous journey, especially for the
@@ -46,7 +47,8 @@ const Service = () => {
 
           <div className="service__item">
             <div className="service__img">
-              <img src={Story} alt="" />
+              <div className="bar">CONFIDENCE</div>
+              <div className="small" />
             </div>
             <div className="service__content">
               Now, I feel at a point that I can build some Websites, using some
@@ -56,7 +58,8 @@ const Service = () => {
           </div>
           <div className="service__item">
             <div className="service__img">
-              <img src={Tech} alt="" />
+              <div className="bar">AMBITION</div>
+              <div className="small" />
             </div>
             <div className="service__content">
               I want to be a person who can always catch up with the latest

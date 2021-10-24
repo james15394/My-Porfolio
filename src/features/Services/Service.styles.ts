@@ -18,28 +18,26 @@ export const ServiceContainer = styled.div`
     ::before {
       position: absolute;
       content: "";
-      top: 0;
+      top: 50%;
+      transform: translateY(-50%);
       left: 0;
       width: 100%;
-      height: 100%;
+      height: 50px;
       background: linear-gradient(#ff2c24, #457b9d);
-      clip-path: circle(20% at 100% 70%);
-      @media (max-width: 430px) {
-        bottom: 0;
-        right: 0;
-      }
     }
     ::after {
       position: absolute;
       content: "";
-      top: 0;
-      left: 0;
+      background: linear-gradient(
+        to bottom,
+        transparent,
+        rgba(255, 255, 255, 0.2)
+      );
       width: 100%;
-      height: 100%;
-      background: linear-gradient(#457b9d, #f1faee);
-      clip-path: circle(20% at 14% 16%);
-      @media (max-width: 430px) {
-      }
+      height: 180%;
+      top: calc(50% + 50px);
+      transform: translateY(-50%);
+      filter: blur(5px);
     }
   }
   .service__container {
@@ -55,16 +53,31 @@ export const ServiceContainer = styled.div`
     }
     .service__item {
       position: relative;
+      justify-self: center;
+      /* ::before {
+        position: absolute;
+        content: "";
+        background: linear-gradient(
+          90deg,
+          transparent,
+          rgba(255, 255, 255, 0.2)
+        );
+        width: 100%;
+        height: 180%;
+        transform: rotate(45deg);
+        top: -350px;
+        filter: blur(5px);
+      } */
       display: flex;
       flex-direction: column;
       align-items: center;
-      background: rgba(255, 255, 255, 0.1);
-      border-top: 1px solid rgba(255, 255, 255, 0.5);
-      border-left: 1px solid rgba(255, 255, 255, 0.5);
-      max-height: 500px;
-      max-width: 400px;
-      border-radius: 15px;
-      overflow: hidden;
+      height: 450px;
+      max-width: 300px;
+      border-bottom-left-radius: 160px;
+      border-bottom-right-radius: 160px;
+      border-top-left-radius: 30px;
+      border-top-right-radius: 30px;
+      /* overflow: hidden; */
       transition: 0.2s;
       z-index: 111;
       @media (max-width: 430px) {
@@ -73,35 +86,127 @@ export const ServiceContainer = styled.div`
         flex-direction: row;
         place-self: center;
       }
-      :hover {
-        background: rgba(255, 255, 255, 0.2);
-      }
-      box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+      box-shadow: 0 15px 0 #fff, inset 0 -15px 0 rgba(255, 255, 255, 0.25);
       backdrop-filter: blur(10px);
       background-clip: padding-box;
-      padding: 10px;
       :nth-child(2) {
-        .service__img {
-          background: linear-gradient(#0575e6, #021b79);
+        background: linear-gradient(to bottom, #0575e6, #021b79);
+        .bar {
+          background: #fe8f8f;
+        }
+        .small {
+          background: #ff5c58;
+          ::before {
+            background: #fe8f8f;
+          }
         }
       }
       :nth-child(1) {
-        .service__img {
-          background: linear-gradient(#cb2d3e, #ef473a);
+        background: linear-gradient(to bottom, #ffec61, #f321d7);
+        .bar {
+          background: #f98404;
+        }
+        .small {
+          background: #fc5404;
+          ::before {
+            background: #f98404;
+          }
         }
       }
       :nth-child(3) {
-        .service__img {
-          background: linear-gradient(#f9d924, #ff2c24);
+        background: linear-gradient(to bottom, #f9d924, #ff2c24);
+        .bar {
+          background: #ba135d;
+        }
+        .small {
+          background: #701940;
+          ::before {
+            background: #ba135d;
+          }
         }
       }
       .service__img {
+        display: flex;
+        align-items: flex-start;
+        justify-content: center;
         margin-bottom: 20px;
         padding: 20px;
-        border-radius: 50%;
+        position: relative;
+        width: 100%;
+        height: 5em;
+        .bar {
+          position: absolute;
+          z-index: 1000;
+          border-radius: 30px;
+          border-bottom-left-radius: 0;
+          height: 50px;
+          width: 90%;
+          left: -15px;
+          box-shadow: 10px 0 #fff, inset -10px 0 rgb(255 255 255 / 30%);
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          color: #fff;
+          letter-spacing: 2px;
+          font-weight: 800;
+          font-size: 18px;
+          ::before {
+            position: absolute;
+            content: "";
+            width: 100%;
+            height: 5px;
+            filter: blur(5px);
+            background: rgba(0, 0, 0, 0.2);
+            bottom: -7px;
+            border-radius: 30px;
+          }
+        }
+        .small {
+          width: 15px;
+          height: 30px;
+          position: absolute;
+          left: -15px;
+          bottom: -18px;
+          border-top-left-radius: 30px;
+          border-bottom-left-radius: 30px;
+          ::before {
+            position: absolute;
+            content: "";
+            z-index: -10;
+            width: 15px;
+            height: 13px;
+            top: 2px;
+          }
+        }
+        /* border-bottom-left-radius: 100px;
+        border-bottom-right-radius: 100px; */
+        /* ::before {
+          content: "";
+          position: absolute;
+          width: 50px;
+          height: 50px;
+          background: transparent;
+          z-index: 100;
+          left: -50px;
+          top: 0;
+          border-top-right-radius: 50px;
+          box-shadow: 15px -15px 0 10px #132a48;
+        }
+        ::after {
+          content: "";
+          position: absolute;
+          width: 50px;
+          height: 50px;
+          background: transparent;
+          z-index: 100;
+          right: -50px;
+          top: 0;
+          border-top-left-radius: 50px;
+          box-shadow: -15px -15px 0 10px #132a48;
+        } */
         img {
-          width: 4em;
-          height: 4em;
+          width: 3em;
+          height: 3em;
         }
         @media (max-width: 800px) {
           display: none;
@@ -114,7 +219,8 @@ export const ServiceContainer = styled.div`
         color: #fff;
         letter-spacing: 1.5px;
         line-height: 2;
-        font-size: clamp(0.8rem, 1vw + 0.2rem, 2rem);
+        padding: 20px;
+        font-size: clamp(0.6rem, 1vw, 2rem);
       }
     }
   }
