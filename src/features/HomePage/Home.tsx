@@ -56,10 +56,10 @@ const Home = () => {
   const areaRef = useRef<HTMLDivElement>(null!);
 
   function handleMouse(e: any) {
-    const xValue = (e.clientX * 9) / 300;
-    const yValue = (e.clientY * 9) / 300;
-    const x1Value = (e.clientX * -2) / 260;
-    const y1Value = (e.clientY * -2) / 260;
+    const xValue = -(e.clientX * 5) / 300;
+    const yValue = -(e.clientY * 5) / 300;
+    const x1Value = (e.clientX * -4) / 260;
+    const y1Value = (e.clientY * -4) / 260;
     const x2Value = (e.clientX * -6) / 100;
     const y2Value = (e.clientY * -6) / 100;
     x.set(xValue);
