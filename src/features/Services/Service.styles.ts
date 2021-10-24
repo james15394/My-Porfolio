@@ -54,20 +54,6 @@ export const ServiceContainer = styled.div`
     .service__item {
       position: relative;
       justify-self: center;
-      /* ::before {
-        position: absolute;
-        content: "";
-        background: linear-gradient(
-          90deg,
-          transparent,
-          rgba(255, 255, 255, 0.2)
-        );
-        width: 100%;
-        height: 180%;
-        transform: rotate(45deg);
-        top: -350px;
-        filter: blur(5px);
-      } */
       display: flex;
       flex-direction: column;
       align-items: center;
@@ -77,7 +63,6 @@ export const ServiceContainer = styled.div`
       border-bottom-right-radius: 160px;
       border-top-left-radius: 30px;
       border-top-right-radius: 30px;
-      /* overflow: hidden; */
       transition: 0.2s;
       z-index: 111;
       @media (max-width: 430px) {
@@ -178,32 +163,6 @@ export const ServiceContainer = styled.div`
             top: 2px;
           }
         }
-        /* border-bottom-left-radius: 100px;
-        border-bottom-right-radius: 100px; */
-        /* ::before {
-          content: "";
-          position: absolute;
-          width: 50px;
-          height: 50px;
-          background: transparent;
-          z-index: 100;
-          left: -50px;
-          top: 0;
-          border-top-right-radius: 50px;
-          box-shadow: 15px -15px 0 10px #132a48;
-        }
-        ::after {
-          content: "";
-          position: absolute;
-          width: 50px;
-          height: 50px;
-          background: transparent;
-          z-index: 100;
-          right: -50px;
-          top: 0;
-          border-top-left-radius: 50px;
-          box-shadow: -15px -15px 0 10px #132a48;
-        } */
         img {
           width: 3em;
           height: 3em;

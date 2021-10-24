@@ -1,11 +1,6 @@
 import React, { useEffect, useRef, useState } from "react";
 import { HomeContainer } from "./Home.styles";
-import {
-  motion,
-  useAnimation,
-  useMotionValue,
-  useTransform,
-} from "framer-motion";
+import { motion, useAnimation, useMotionValue } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 
 const introVariants = {
@@ -46,21 +41,35 @@ const Home = () => {
 
   const x = useMotionValue(0);
   const y = useMotionValue(0);
+  const x1 = useMotionValue(0);
+  const y1 = useMotionValue(0);
+  const x2 = useMotionValue(0);
+  const y2 = useMotionValue(0);
 
-  const rotateX = useTransform(
-    y,
-    [0, 100, 200, 300, 400],
-    [45, 35, 25, 15, -45]
-  );
-  const rotateY = useTransform(x, [0, 100, 200, 300, 400], [45, 35, 25, 15, 0]);
+  // const rotateX = useTransform(
+  //   y,
+  //   [0, 100, 200, 300, 400],
+  //   [45, 35, 25, 15, -45]
+  // );
+  // const rotateY = useTransform(x, [0, 100, 200, 300, 400], [45, 35, 25, 15, 0]);
 
   const areaRef = useRef<HTMLDivElement>(null!);
 
   function handleMouse(e: any) {
-    var rect = areaRef.current.getBoundingClientRect();
-
-    x.set(e.clientX - rect.left);
-    y.set(e.clientY - rect.top);
+    const xValue = (e.clientX * 9) / 300;
+    const yValue = (e.clientY * 9) / 300;
+    const x1Value = (e.clientX * -2) / 260;
+    const y1Value = (e.clientY * -2) / 260;
+    const x2Value = (e.clientX * -6) / 100;
+    const y2Value = (e.clientY * -6) / 100;
+    x.set(xValue);
+    y.set(yValue);
+    x1.set(x1Value);
+    y1.set(y1Value);
+    x2.set(x2Value);
+    y2.set(y2Value);
+    // x.set(e.clientX - rect.left);
+    // y.set(e.clientY - rect.top);
   }
   return (
     <HomeContainer
@@ -127,8 +136,8 @@ const Home = () => {
               animate="visible"
               transition={{ duration: 0.5 }}
               style={{
-                translateX: rotateX,
-                translateY: rotateY,
+                translateX: x,
+                translateY: y,
               }}
             >
               Portfolio
@@ -142,15 +151,15 @@ const Home = () => {
               transition={{ duration: 0.5 }}
               className="circle"
               style={{
-                translateX: rotateX,
-                translateY: rotateY,
+                translateX: x1,
+                translateY: y1,
               }}
             ></motion.div>
             <motion.div
               className="circle1"
               style={{
-                translateX: rotateX,
-                translateY: rotateY,
+                translateX: x2,
+                translateY: y2,
               }}
             ></motion.div>
           </div>
